@@ -1,0 +1,6 @@
+{
+  name: @gym.name,
+  address: @gym.address,
+  day_and_times: @gym.day_and_times,
+  users_that_attend: @gym.users
+}
