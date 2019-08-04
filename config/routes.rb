@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'friends/index'
+  get 'friends/destroy'
+  resources :friend_requests
   # EXAMPLE HTML ROUTE
   # get "/photos" => "photos#index"
 
@@ -11,5 +14,9 @@ Rails.application.routes.draw do
     patch 'users/:id' => 'users#update'
     post 'day_and_times' => 'day_and_times#create'
     get "/gyms/:id" => 'gyms#show'
+    post 'statuses' => 'statuses#create'
+    post 'friend_requests' => 'friend_requests#create'
+    post 'sessions' => 'sessions#create'
+    post 'friendships' => 'friendships#create'
   end
 end

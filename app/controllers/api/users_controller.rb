@@ -16,9 +16,16 @@ class Api::UsersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       age: params[:age],
-      location: params[:location])
-    @user.save
-    render 'show.json.jb'
+      location: params[:location],
+      email: params[:email],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
+    )
+    if @user.save
+      render json: {message: 'User created successfully'}, status: :created
+    else
+      render json: {errors: user.errors.full_messages}, status: :bad_request
+    end
   end
 
   def update
