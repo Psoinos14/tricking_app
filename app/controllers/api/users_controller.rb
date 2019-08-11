@@ -38,4 +38,5 @@ class Api::UsersController < ApplicationController
     @user.save
     render 'show.json.jb'
   end
+
 end

@@ -13,10 +13,12 @@ Rails.application.routes.draw do
     post 'users' => 'users#create'
     patch 'users/:id' => 'users#update'
     post 'day_and_times' => 'day_and_times#create'
+    get 'day_and_times/:id' => 'day_and_times#show'
     get "/gyms/:id" => 'gyms#show'
     post 'statuses' => 'statuses#create'
     post 'friend_requests' => 'friend_requests#create'
     post 'sessions' => 'sessions#create'
     post 'friendships' => 'friendships#create'
+    get 'gyms' => 'gyms#index'
   end
 end
