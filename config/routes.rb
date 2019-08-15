@@ -20,5 +20,7 @@ Rails.application.routes.draw do
     post 'sessions' => 'sessions#create'
     post 'friendships' => 'friendships#create'
     get 'gyms' => 'gyms#index'
+    get 'statuses' => 'statuses#index'
+    post 'attendees' => 'attendees#create'
   end
 end

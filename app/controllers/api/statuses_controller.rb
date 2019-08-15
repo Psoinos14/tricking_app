@@ -1,5 +1,10 @@
 class Api::StatusesController < ApplicationController
 
+  def index
+    @statuses = Status.all
+    render 'index.json.jb'
+  end
+
   def create
     @status = Status.new(
       text: params[:text],

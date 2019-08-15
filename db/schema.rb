@@ -10,18 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_04_204502) do
+ActiveRecord::Schema.define(version: 2019_08_15_014616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "day_and_times", force: :cascade do |t|
-    t.string "day"
-    t.string "time"
-    t.integer "gym_id"
+  create_table "attendees", force: :cascade do |t|
+    t.integer "day_and_time_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "day_and_times", force: :cascade do |t|
+    t.string "day"
+    t.integer "gym_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "datetime"
   end
 
   create_table "friend_requests", force: :cascade do |t|

@@ -1,0 +1,4 @@
+{
+day_and_time_id: @attendee.day_and_time_id,
+user_id: @attendee.user_id
+}

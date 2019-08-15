@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  has_many :day_and_times
-  has_many :gyms, through: :day_and_times
+  
+  # has_many :gyms, through: :day_and_times (Do I need this??)
+  has_many :attendees
+  has_many :day_and_times, through: :attendees
   has_many :statuses
   has_many :friend_requests, dependent: :destroy
   has_many :pending_friends, through: :friend_requests, source: :friend
