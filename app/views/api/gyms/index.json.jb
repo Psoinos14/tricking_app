@@ -2,8 +2,6 @@
   {id: gym.id,
    name: gym.name,
    address: gym.address,
-   open_gym_times: gym.day_and_times,
-   # attendees: 
-
+   open_gym_times: gym.day_and_times
    }
 end
