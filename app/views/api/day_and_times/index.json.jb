@@ -2,7 +2,7 @@
   {
     gym_name: day_and_time.gym.name,
     day: day_and_time.day,
-    date_time: day_and_time.datetime,
+    date_time: day_and_time.friendly_datetime,
     attendees: day_and_time.users
   }
 end
