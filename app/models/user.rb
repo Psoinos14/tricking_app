@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
   has_secure_password
   validates :email, presence: true, uniqueness: true
+  has_many :statuses
 
   def remove_friend(friend)
     current_user.friends.destroy(friend)
