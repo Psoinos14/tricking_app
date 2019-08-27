@@ -7,11 +7,10 @@ class Api::DayAndTimesController < ApplicationController
   
   def create
     @day_and_time = DayAndTime.new(
-      day: params[:day],
-      DateTime: params[:datetime],
+      datetime: params[:datetime],
       gym_id: params[:gym_id],
       )
-    @day_and_time.save
+    @day_and_time.save!
     render 'create.json.jb'
   end
 

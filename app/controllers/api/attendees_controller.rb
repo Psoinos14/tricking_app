@@ -3,7 +3,7 @@ class Api::AttendeesController < ApplicationController
     @attendee = Attendee.new(
       day_and_time_id: params[:day_and_time_id],
       user_id: current_user.id)
-    @attendee.save
+    @attendee.save!
     render 'create.json.jb'
   end
 end

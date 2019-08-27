@@ -1,6 +1,7 @@
 {
-  day: @day_and_time.day,
-  time: @day_and_time.time,
-  gym_id: @day_and_time.gym_id,
-  user_id: @day_and_time.user_id
+  gym_name: @day_and_time.gym.name,
+  date_time: @day_and_time.friendly_datetime,
 }
+
+# delete the bad data,
+# migration to get rid of day column
