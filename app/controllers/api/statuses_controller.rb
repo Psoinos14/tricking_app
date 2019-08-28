@@ -9,7 +9,7 @@ class Api::StatusesController < ApplicationController
     @status = Status.new(
       text: params[:text],
       user_id: current_user.id)
-    @status.save
+    @status.save!
     render 'create.json.jb'
   end
 

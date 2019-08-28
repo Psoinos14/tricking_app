@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_010520) do
+ActiveRecord::Schema.define(version: 2019_08_28_001728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2019_08_27_010520) do
     t.string "password_digest"
   end
 
-  add_foreign_key "friend_requests", "friend_requests", column: "friend_id"
   add_foreign_key "friend_requests", "users"
+  add_foreign_key "friend_requests", "users", column: "friend_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
 end
