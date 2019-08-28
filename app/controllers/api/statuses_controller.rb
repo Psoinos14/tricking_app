@@ -1,6 +1,7 @@
 class Api::StatusesController < ApplicationController
 
   def index
+    @user = current_user
     @friends = current_user.friends
     render 'index.json.jb'
   end
