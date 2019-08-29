@@ -1,9 +1,14 @@
 class Api::StatusesController < ApplicationController
 
   def index
-    @user = current_user
-    @friends = current_user.friends
-    render 'index.json.jb'
+    if !current_user
+      @statuses = Status.all
+      render 'no_user_index.json.jb'
+    else
+      @user = current_user
+      @friends = current_user.friends
+      render 'index.json.jb'
+    end
   end
 
   def create

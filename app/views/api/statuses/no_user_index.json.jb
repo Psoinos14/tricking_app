@@ -1,0 +1,5 @@
+@statuses.map do |status| {
+   user: status.user.first_name + " #{status.user.last_name}",
+   status: status.text
+   }
+end

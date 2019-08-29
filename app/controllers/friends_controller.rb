@@ -9,10 +9,15 @@ class FriendsController < ApplicationController
     current_user.remove_friend(@friend)
     head :no_content
   end
-  ...
-  private
 
   def set_friend
     @friend = current_user.friends.find(params[:id])
   end
+
+  def accept_friend_request
+    @friend_request = FriendRequest.find_by(user_id: params[:user_id], friend_id: current_user)
+    @friend_request.accept
+    render 'index.json.jb'
+  end
+
 end

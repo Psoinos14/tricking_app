@@ -30,7 +30,5 @@ class FriendRequestsController < ApplicationController
   def set_friend_request
     @friend_request = FriendRequest.find(params[:id])
   end
-
-
 end
 

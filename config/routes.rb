@@ -23,5 +23,8 @@ Rails.application.routes.draw do
     get 'gyms' => 'gyms#index'
     get 'statuses' => 'statuses#index'
     post 'attendees' => 'attendees#create'
+
   end
+  post 'friendships' => 'friends#accept_friend_request'
+  get 'friend_requests' => 'friend_requests#index'
 end
