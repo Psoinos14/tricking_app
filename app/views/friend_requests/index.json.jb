@@ -1,4 +1,5 @@
 @incoming.map do |incoming| {
-  incoming_friend_requests: incoming.user.first_name + " #{incoming.user.last_name}"
+  incoming_friend_requests: incoming.user.first_name + " #{incoming.user.last_name}",
+  friend_id: incoming.user.id
 }
 end

@@ -15,16 +15,19 @@ class FriendRequestsController < ApplicationController
   def index
     @incoming = FriendRequest.where(friend: current_user)
     @outgoing = current_user.friend_requests
+    render 'index.json.jb'
   end
 
   def destroy
     @friend_request.destroy
     head :no_content
+    render 'destroy.json.jb'
   end
 
   def update
     @friend_request.accept
     head :no_content
+    render 'update.json.jb'
   end
   
   def set_friend_request

@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   end
   post 'friendships' => 'friends#accept_friend_request'
   get 'friend_requests' => 'friend_requests#index'
+  patch 'friend_requests' => 'friend_requests#update'
+  delete 'friend_requests' => 'friend_requests#destroy'
 end
