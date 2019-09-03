@@ -19,8 +19,10 @@ class FriendRequestsController < ApplicationController
   end
 
   def destroy
+    @friend_request = FriendRequest.find_by(user_id: params[:id], friend_id: current_user.id)
+    p params[:id]
+    p current_user
     @friend_request.destroy
-    head :no_content
     render 'destroy.json.jb'
   end
 
@@ -31,7 +33,7 @@ class FriendRequestsController < ApplicationController
   end
   
   def set_friend_request
-    @friend_request = FriendRequest.find(params[:id])
+    @friend_request = FriendRequest.find_by(id: params[:id])
   end
 end
 

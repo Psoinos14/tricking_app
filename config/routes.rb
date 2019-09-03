@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   post 'friendships' => 'friends#accept_friend_request'
   get 'friend_requests' => 'friend_requests#index'
   patch 'friend_requests' => 'friend_requests#update'
-  delete 'friend_requests' => 'friend_requests#destroy'
+  delete 'friend_requests/:user_id' => 'friend_requests#destroy'
 end
